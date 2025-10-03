@@ -23,6 +23,10 @@ Install the following libraries through Arduino IDE Library Manager:
    - VCC → 5V
    - GND → GND
    - Trig → Digital Pin 2
+   - Echo → Digital Pin 4
+3. Attach the sensor to the robot's base for optimal object detection
+4. Connect Arduino to your computer via USB
+
 
 ### Software Installation
 1. Download or clone the `braccio.ino` file
@@ -141,10 +145,6 @@ The system uses inverse kinematics to work backward from the object's position t
 | Movement from one point to another | ✓ |
 | Safe release | ✓ |
 
-
-   - Echo → Digital Pin 4
-3. Attach the sensor to the robot's base for optimal object detection
-4. Connect Arduino to your computer via USB
 
 ## 🔧 Key Learnings
 
