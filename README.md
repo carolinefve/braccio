@@ -7,9 +7,8 @@ The project aimed to develop a robotic arm system for automated object manipulat
 ### Prerequisites
 - Arduino IDE installed on your computer
 - Braccio Tinkerkit robotic arm
-- Arduino board (compatible with Braccio)
+- Arduino board 
 - HC-SR04 ultrasonic sensor
-- USB cable for Arduino connection
 
 ### Required Libraries
 Install the following libraries through Arduino IDE Library Manager:
@@ -19,13 +18,8 @@ Install the following libraries through Arduino IDE Library Manager:
 
 ### Hardware Setup
 1. Assemble the Braccio robotic arm according to manufacturer instructions
-2. Connect the HC-SR04 ultrasonic sensor:
-   - VCC → 5V
-   - GND → GND
-   - Trig → Digital Pin 2
-   - Echo → Digital Pin 4
+2. Connect the HC-SR04 ultrasonic sensor
 3. Attach the sensor to the robot's base for optimal object detection
-4. Connect Arduino to your computer via USB
 
 
 ### Software Installation
@@ -33,8 +27,6 @@ Install the following libraries through Arduino IDE Library Manager:
 2. Open the file in Arduino IDE
 3. Select your Arduino board: `Tools > Board > [Your Arduino Model]`
 4. Select the correct COM port: `Tools > Port > [Your Port]`
-5. Verify the code by clicking the checkmark icon
-6. Upload the code to Arduino by clicking the arrow icon
 
 ### How to Use
 1. Power on the Braccio arm and ensure all connections are secure
@@ -54,6 +46,10 @@ Install the following libraries through Arduino IDE Library Manager:
 ## ⚙️ System Architecture
 
 The Braccio Tinkerkit robotic arm system consists of four main components:
+
+
+<img width="616" height="444" alt="Screenshot 2025-10-06 at 14 03 17" src="https://github.com/user-attachments/assets/6750231e-6fd4-4247-b90a-471d07bf15a5" />
+
 
 ### Servo Motors
 
@@ -93,11 +89,16 @@ Serves as the central unit, managing communication between components, generatin
 
 The HC-SR04 sensor was tested by measuring distances of 5 cm, 10 cm, 15 cm, 20 cm, 25 cm and 30 cm, with each measurement repeated five times. The readings remained consistent with a small error margin of ±3mm. While accuracy slightly decreases with distance, the sensor performs reliably within its 5 cm to 30 cm range.
 
+<img width="410" height="327" alt="Screenshot 2025-10-06 at 14 03 50" src="https://github.com/user-attachments/assets/d82c0209-71f6-43ea-871d-db3069627973" />
+
+
 **Distance Measurement Process:**
 1. Trig pin is set "high" for 10µs, triggering 8 ultrasonic pulses at 40kHz
 2. Echo pin is set "high", ready to detect returning waves
 3. If waves hit an object and reflect, Echo pin registers signal and switches "low"
 4. Time duration allows for distance calculation using speed of sound
+
+<img width="814" height="321" alt="Screenshot 2025-10-06 at 14 04 26" src="https://github.com/user-attachments/assets/bbe74ded-7fac-4437-b7a3-f08615662564" />
 
 ## 🧮 Inverse Kinematics
 
@@ -124,6 +125,9 @@ The system uses inverse kinematics to work backward from the object's position t
 - Verify object is no longer detected
 - Resume scanning from starting position
 
+<img width="599" height="596" alt="Screenshot 2025-10-06 at 14 05 17" src="https://github.com/user-attachments/assets/94953c40-34eb-4ceb-ac68-dd710ad92861" />
+  
+
 ## 📊 Performance Metrics
 
 | Metric | Values/Observations |
@@ -135,6 +139,8 @@ The system uses inverse kinematics to work backward from the object's position t
 | Maximum reach | ~32 cm (from base) |
 | Payload capacity | 150g (fully extended), 400g (closer to base) |
 
+<img width="599" height="596" alt="Screenshot 2025-10-06 at 14 06 21" src="https://github.com/user-attachments/assets/2962ef3b-64cf-4c29-aaf3-d1f072347bdf" />
+
 ## ✅ Task Objectives Achievement
 
 | Objective | Achieved? |
@@ -144,7 +150,6 @@ The system uses inverse kinematics to work backward from the object's position t
 | Secure grip | ✓ |
 | Movement from one point to another | ✓ |
 | Safe release | ✓ |
-
 
 ## 🔧 Key Learnings
 
